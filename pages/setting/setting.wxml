@@ -1,0 +1,68 @@
+<view class="container">
+    <view>
+        <template is="setting_title" data="{{title:'自定义', themeColor}}"></template>
+        <view bindtap="setBg" bindlongpress="resetBg">
+            <template is="settingwithaarow" data="{{header:'自定义首页背景', detail:'长按恢复默认背景'}}"></template>
+        </view>
+        
+        <template is="settingwithswitch" data="{{typeId:'searchon', header:'显示顶部城市搜索', detail:'', flag:searchOn, themeColor}}"></template>
+        
+        <view class="setting_wrap">
+            <view>
+                <text>设置屏幕亮度</text>
+                <text class="setting_lightness">{{lightness}}</text>
+            </view>
+            <view>
+                <slider activeColor="{{themeColor}}" block-size="12" bindchanging="setLightness"/>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <template is="setting_title" data="{{title:'检查更新', themeColor}}"></template>
+        <template is="settingwithswitch" data="{{typeId:'updateon', header:'打开更新提醒', detail:'', flag:updateOn, themeColor}}"></template>
+    </view>
+
+    <view>
+        <template is="setting_title" data="{{title:'清除数据', themeColor}}"></template>
+
+        <view bindtap="clearSettings">
+            <template is="settingwithaarow" data="{{header:'恢复初始化设置', detail:'所有设置信息将被清除'}}"></template>
+        </view>
+        
+        <view bindtap="clearStorage">
+            <template is="settingwithaarow" data="{{header:'清除本地缓存', detail:'所有本地将被清除'}}"></template>
+        </view>
+
+    </view>
+
+    <template name="setting_title">
+        <view class="setting_title" style="color:{{themeColor}}">
+            <text>{{title}}</text>
+        </view>
+    </template>
+
+    <template name="settingwithaarow">
+        <view class="setting_wrap">
+            <view class="setting_info">
+                <text>{{header}}</text>
+                <text class="setting_detail" wx:if="{{detail !== ''}}">{{detail}}</text>
+            </view>
+            <view class="arrow_icon">
+                <image src="../../img/arrow.png" />
+            </view>
+        </view>
+    </template>
+
+    <template name="settingwithswitch">
+        <view class="setting_wrap">
+            <view class="setting_info">
+                <text>{{header}}</text>
+                <text class="setting_detail" wx:if="{{detail !== ''}}">{{detail}}</text>
+            </view>
+            <view class="setting_switch">
+                <switch checked="{{flag}}" color="{{themeColor}}" bindchange="switchChange" data-type-id="{{typeId}}"/>
+            </view>
+        </view>
+    </template>
+</view>

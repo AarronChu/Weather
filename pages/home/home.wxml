@@ -1,0 +1,50 @@
+<import src="/pages/forecast-list/forecast.wxml"/>
+<import src="/pages/tips/tips"/>
+<view class="container" bindlongpress="showStar" bindtap="hideNaviIcons">
+  <celebrate id="celebrate" wx:if="{{holiday}}"></celebrate>
+  <view class="search_box" wx:if="{{searchOn}}">
+    <icon type="search" size="18" class="search_icon" color="#ffffff"></icon>
+    <input class="search_inp" placeholder="查询其他城市天气" placeholder-style="color:#fff" value="{{inputVal}}" confirm-type="查询" bindconfirm="searchCityWeather"></input>
+  </view>
+  <view class="bg_color" wx:if="{{!imgSrc}}" style="background-color:{{themeColor}};"></view>
+  <image class="bg_img" wx:if="{{imgSrc}}" src="{{imgSrc}}" mode='aspectFill'></image>
+  <view class="w_today">
+    <view class="w_city">{{curCity}}
+      <text class="time">{{updateTime}}更新</text>
+    </view>
+    <view class="w_temperature">
+      <text class="temp_num">{{curTemperature}}</text>
+      <text>℃</text>
+    </view>
+    <view class="w_weather">
+      <text>{{weatherDesc}}</text>
+    </view>
+    <view class="w_air">
+      <text>{{airQuality.quality}}{{airQuality.val}} {{airQuality.desc}}</text>
+    </view>
+  </view>
+  <scroll-view class="w_forecast" scroll-x>
+    <block wx:for="{{forecast}}" wx:key="item">
+      <template is="forecast_list" data="{{...item}}"></template>
+    </block>
+  </scroll-view>
+  <view class="w_tips">
+    <block wx:for="{{tips}}" wx:key="item">
+      <template is="tips" data="{{...item, index}}"></template>
+    </block>
+  </view>
+  <view class="navigation_icons">
+    <view class="navi_menu" catchlongpress="stopBubble" catchtap="showNaviIcons" catchtouchmove="naviIconMove" animation="{{naviAnimation[0]}}" style="left:{{naviIconLeft}}px; top:{{naviIconTop}}px;">
+      <image src="../../img/menu.png" />
+    </view>
+    <view animation="{{naviAnimation[1]}}" style="left:{{naviIconLeft}}px; top:{{naviIconTop}}px;" catchtap="goToSearch">
+      <image src="../../img/location.png" />
+    </view>
+    <view animation="{{naviAnimation[2]}}" style="left:{{naviIconLeft}}px; top:{{naviIconTop}}px;" catchtap="goToMyCities">
+      <image src="../../img/info.png" />
+    </view>
+    <view animation="{{naviAnimation[3]}}" style="left:{{naviIconLeft}}px; top:{{naviIconTop}}px;" catchtap="goToSetting">
+      <image src="../../img/setting.png" />
+    </view>
+  </view>
+</view>

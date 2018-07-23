@@ -1,0 +1,1 @@
+<image class="celebrate" wx:for="{{arr}}" wx:key="{{index}}" animation="{{animations[index]}}" style="left:{{lefts[index]}}px; top:{{tops}}px; width:{{widths[index]}}rpx; height:{{widths[index]}}rpx;" src="{{src}}" />

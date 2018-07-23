@@ -1,0 +1,16 @@
+<!--pages/forecast-list/forecast.wxml-->
+<template name="forecast_list">
+  <view class="forecast_wrapper">
+    <view class="forecast_day">
+      <text>{{date}}</text>
+      <view>
+        <image src="{{dayPictureUrl}}" />
+        <text>~</text>
+        <image src="{{nightPictureUrl}}" />
+      </view>
+      <text>{{temperature}}</text>
+      <text>{{weather}}</text>
+      <text>{{wind}}</text>
+    </view>
+  </view>
+</template>

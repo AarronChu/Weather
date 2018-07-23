@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "fine Weather",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+      "celebrate": "/components/celebrate/celebrate"
+  }
+}

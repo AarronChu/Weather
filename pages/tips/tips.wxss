@@ -1,0 +1,27 @@
+/* pages/tibs/tibs.wxss */
+.tips_wrapper{
+    width:90%;
+    margin:0 auto;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    padding: 20rpx 10rpx;
+    font-size: 28rpx;
+    color:#fff;
+}
+.tips_img, .tips_content{
+    display: inline-block;
+    vertical-align: middle;
+}
+.tips_img image{
+    width:90rpx;
+    height:90rpx;
+}
+.tips_content{
+    width: 80%;
+    margin-left:20rpx;
+}
+.tips_title{
+    display: inline-block;
+    width:100%;
+    font-size:32rpx;
+    padding:8rpx 0;
+}

@@ -1,0 +1,121 @@
+@import "/pages/forecast-list/forecast";
+@import "/pages/tips/tips";
+
+page{
+  width:100%;
+}
+.container{
+  position:relative;
+  width:100%;
+  /* background-color:#384148; */
+}
+.search_box{
+  position:fixed;
+  left:50%;
+  width:80%;
+  height:50rpx;
+  transform: translateX(-50%);
+  line-height:50rpx;
+  font-size:30rpx;
+  padding:5rpx 10rpx;
+  display:flex;
+  align-items:bottom;
+  border-bottom:2px solid #fff;
+}
+.search_box .search_icon{
+  margin: 10rpx 15rpx;
+}
+.search_box .search_inp{
+  margin-left:0rpx;
+  color:#fff;
+}
+.bg_color, .bg_img{
+  position:fixed;
+  width:100%;
+  height:100%;
+  right:0;
+  bottom:0;
+  z-index:-1;
+}
+
+.w_today {
+  padding-top: 140rpx;
+  width: 100%;
+  color: #fff;
+  text-align:center;
+}
+.w_today .w_city {
+  line-height:40rpx;
+  font-size:40rpx;
+  position: relative;
+}
+.w_today .w_city .time{
+  display:block;
+  position:absolute;
+  right:60rpx;
+  bottom:0;
+  font-size: 24rpx;
+}
+.w_today .w_temperature{
+  width:100%;
+  line-height:180rpx;
+  margin-top:100rpx;
+}
+.w_today .w_temperature text{
+  font-size:100rpx;
+}
+.w_today .w_temperature .temp_num{
+  font-size:180rpx;
+}
+.w_today .w_weather{
+  width:100%;
+  font-size:30rpx;
+  margin-top:30rpx;
+}
+.w_today .w_air{
+  width:100%;
+  margin-top: 20rpx;
+}
+.w_today .w_air text{
+  display:inlien-block;
+  background-color:rgba(255,255,255,0.3);
+  border-radius:30rpx;
+  font-size:24rpx;
+  line-height:24rpx;
+  padding:5rpx 15rpx;
+}
+.w_forecast{
+  margin-top:60rpx;
+  white-space: nowrap;
+}
+.w_tips{
+  margin-top:30rpx;
+  width:100%;
+  background-color:rgba(255,255,255,0.3);
+}
+
+.navigation_icons{
+  z-index:100;
+}
+
+.navigation_icons view{
+  width:40px;
+  height:40px;
+  position:fixed;
+  right:30px;
+  bottom:60px;
+  z-index:10;
+  opacity:0;
+  transform-origin: 50% 50%;
+  transform:rotate(-180deg);
+}
+
+.navigation_icons .navi_menu{
+  z-index:20;
+  opacity:0.5;
+}
+
+.navigation_icons image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,28 @@
+/* pages/forecast-list/forecast.wxss */
+.forecast_wrapper{
+    display: inline-block;
+}
+.forecast_day{
+    display: flex;
+    flex-direction: column;
+    width:190rpx;
+    align-items:center;
+    font-size:24rpx;
+    color:#fff;
+    background-color:rgba(255,255,255,0.3)
+}
+.forecast_day text{
+    display: flex;
+    padding: 5px 0;
+}
+.forecast_day view{
+    display:flex;
+    align-items:center;
+}
+.forecast_day view image{
+    width: 40rpx;
+    height:40rpx;
+}
+.forecast_day view text{
+    padding: 0 5rpx;
+}

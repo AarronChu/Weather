@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    
+    "pages/saved-cities/saved-cities",
+    
+    
+    "pages/setting/setting"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#82a6f5",
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "fine Weather",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}

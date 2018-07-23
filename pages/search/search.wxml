@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="search_area">
+    <view class="search_inp">
+      <icon type="search" size="20"></icon>
+      <input placeholder="请输入你要搜索的城市" bindinput="searchCity"></input>
+    </view>
+    <text>清空</text>
+  </view>
+
+  <view class="search_result" wx:if="{{searching}}">
+    <block wx:for="{{filteredCities}}" wx:key="item">
+      <view class="search_city" data-city-name="{{item.name}}" bindtap="chooseCity">{{item.name}}</view>
+    </block>
+    <view class="no_result" wx:if="{{noResult}}">没有您要找的城市</view>
+  </view>
+  
+  <block wx:if="{{!searching}}">
+    <scroll-view scroll-y="true" scroll-top="100px" style="height:100vh;" scroll-into-view="{{targetId}}">
+      <block wx:for="{{enArr}}" wx:key="item">
+        <view id="{{item}}" class="cities">
+          <view class="enHead">{{item}}</view>
+          <view>
+            <block wx:for="{{cities[item]}}" wx:key="item">
+              <view class="city" data-city-name="{{item}}" bindtap="chooseCity">{{item}}</view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="search_bar">
+      <block wx:for="{{enArr}}" wx:key="item">
+        <view catchtap="scrollToTarget" data-target-id="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </block>
+  
+</view>

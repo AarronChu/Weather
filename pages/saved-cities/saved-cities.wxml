@@ -1,0 +1,29 @@
+<view class="container">
+    <template is="my_city" data="{{...savedWeather[0]}}"></template>
+    <block wx:for="{{savedWeather}}" wx:key="item" wx:if="{{noSavedCity}}" data="{{...item}}">
+        <template is="my_city"></template>
+    </block>
+
+</view>
+
+<template name="my_city">
+    <view class="my_city">
+        <view class="city_info">
+            <text>{{curCity}}</text>
+        </view>
+        <view class="w_desc">
+            <text>{{weatherDesc}}</text>
+        </view>
+        <view class="w_icon">
+            <image src="{{weatherIcon.day}}" />
+            <text>~</text>
+            <image src="{{weatherIcon.night}}" />
+        </view>
+        <view class="w_temp">
+            <text>{{temperature}}</text>
+        </view>
+        <view class="arrow_icon">
+            <image src="../../img/arrow.png" />
+        </view>
+    </view>
+</template>

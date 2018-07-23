@@ -1,0 +1,38 @@
+page{
+    width:100%;
+    height:100%;
+}
+.container{
+    width:100%;
+    height:100%;
+    background: rgba(204,204,204,0.5);
+}
+.my_city{
+    display: flex;
+    width:100%;
+    padding: 30rpx 0;
+    border-bottom: 1px solid rgba(204,204,204,0.5);
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-around;
+    font-size:34rpx;
+    color:#333;
+}
+
+.my_city view {
+    display: flex;
+}
+
+.w_desc {
+    font-size:28rpx
+}
+.w_icon image{
+    width:60rpx;
+    height:60rpx;
+}
+
+.arrow_icon image{
+    width:40rpx;
+    height:40rpx;
+}
+

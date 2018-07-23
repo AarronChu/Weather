@@ -1,0 +1,8 @@
+.celebrate {
+    position:fixed;
+    z-index:999;
+    top:-140px;
+    left:-100px;
+    width:40rpx;
+    height:40rpx;
+}

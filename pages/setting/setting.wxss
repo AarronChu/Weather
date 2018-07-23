@@ -1,0 +1,45 @@
+.container{
+    width:100%;
+}
+.setting_title{
+    padding: 30rpx 50rpx;
+    font-size: 34rpx;
+}
+.setting_wrap{
+    padding: 30rpx 50rpx;
+    font-size: 32rpx;
+    color: #444;
+}
+.setting_wrap .setting_detail{
+    font-size: 28rpx;
+    color: #888;
+}
+.setting_info{
+    display:inline-block;
+}
+.arrow_icon {
+    float:right;
+    padding:20rpx;
+}
+
+.setting_info text{
+    display:block;
+}
+
+.arrow_icon image{
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.setting_switch{
+    float:right;
+}
+
+.wx-switch-input{width:80rpx !important;height:40rpx !important;}
+.wx-switch-input::before{width:78rpx !important;height: 35rpx !important;}
+.wx-switch-input::after{width: 35rpx !important;height: 35rpx !important;}
+
+.setting_lightness{
+    float:right;
+    padding-right:20rpx;
+}
