@@ -22,5 +22,13 @@ App({
       frontColor: '#ffffff',
       backgroundColor: this.setTheme(),
     })
+  },
+  chooseCity: function (e) {
+    let cityName = e.currentTarget.dataset.cityName
+    wx.setStorage({
+      key: 'cityName',
+      data: cityName
+    })
+    wx.navigateBack({})
   }
 })

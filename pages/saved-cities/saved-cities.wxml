@@ -1,13 +1,9 @@
 <view class="container">
-    <template is="my_city" data="{{...savedWeather[0]}}"></template>
-    <block wx:for="{{savedWeather}}" wx:key="item" wx:if="{{noSavedCity}}" data="{{...item}}">
-        <template is="my_city"></template>
-    </block>
-
+    <template is="my_city" wx:for="{{savedWeather}}" wx:key="item" wx:if="{{!noSavedCity}}" data="{{...item}}"></template>
 </view>
 
 <template name="my_city">
-    <view class="my_city">
+    <view class="my_city" bindtap="chooseCity" data-city-name="{{curCity}}">
         <view class="city_info">
             <text>{{curCity}}</text>
         </view>

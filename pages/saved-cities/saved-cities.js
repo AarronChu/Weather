@@ -4,30 +4,31 @@ let singleArray = utils.singleArray
 let app = getApp(),
   globalData = app.globalData,
   gThemeColor = globalData.themeColor,
-  setNavigation = app.setNavigation
+  setNavigation = app.setNavigation,
+  chooseCity = app.chooseCity
 
 Page({
 
   data: {
-
     themeColor: gThemeColor,
-
     savedCities: [],
     savedWeather: [],
-
     noSavedCity: true
   },
 
+  chooseCity,
+  
   getMyCitiesInfo () {
     let cities = this.data.savedCities,
       len = cities.length,
-      noSavedCity
+      noSavedCity,
+      savedWeather = []
     if(len < 1){
       noSavedCity = true
     } else {
       noSavedCity = false
       for (let i = 0; i < len; i++){
-        getWeatherData(cities[i])
+        this.getWeatherData(cities[i])
       }
     }
     this.setData({
@@ -52,16 +53,18 @@ Page({
             day: weatherData.dayPictureUrl,
             night: weatherData.nightPictureUrl
           },
-          savedWeather = this.data.savedWeather || []
-        savedWeather.push({
+          wd = {
             curCity,
             temperature,
             weatherDesc,
             weatherIcon
-          })
-          this.setData({
-            savedWeather
-          })
+          }
+        let savedWeather = this.data.savedWeather || []
+        savedWeather.push(wd)
+        this.setData({
+          savedWeather
+        })
+        console.log(this.data.savedWeather)
       },
       fail: err => {
         console.log(err)
@@ -70,16 +73,21 @@ Page({
   },
 
   onShow: function () {
+    wx.stopPullDownRefresh()
     this.getWeatherData()
     setNavigation()
-    let savedCities = this.data.saveCities || []
     wx.getStorage({
       key: 'savedCities',
       success: res => {
-        savedCities = singleArray(savedCities.concat(res.data))
-        this.setData({
-          savedCities
-        })
+        // console.log(res)
+        if (res.data.length > 0) {
+          let sc = singleArray(res.data)
+          this.setData({
+            savedCities: sc
+          })
+          // console.log(sc, this.data.savedCities)
+          this.getMyCitiesInfo ()
+        }
       }
     })
   }

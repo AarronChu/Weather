@@ -7,12 +7,14 @@ page{
     height:100%;
 }
 .search_area{
+    display:flex;
+    align-items: center;
     background-color:#fff;
     width:100%;
     border-bottom:1px solid rgba(204,204,204,0.5);
 }
 .search_inp{
-    display: inline-block;
+    display: flex;
     width:80%;
     background-color:rgba(204,204,204,0.5);
     border-radius:10rpx;
@@ -29,7 +31,8 @@ page{
     line-height:60rpx;
     vertical-align: middle;
 }
-.search_area text{
+.search_area .cancel_inp{
+    display:flex;
     font-size:32rpx;
     color:#666;
 }

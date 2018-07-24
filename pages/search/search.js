@@ -6,7 +6,8 @@ let allCities = oCities.cities
 let app = getApp(),
   globalData = app.globalData,
   gThemeColor = globalData.themeColor,
-  setNavigation = app.setNavigation
+  setNavigation = app.setNavigation,
+  chooseCity = app.chooseCity
 
 Page({
   data: {
@@ -16,17 +17,11 @@ Page({
     filteredCities: [],
     targetId: '',
     searching: false,
-    noResult: false
+    noResult: false,
+    inputValue: ''
   },
 
-  chooseCity (e) {
-    let cityName = e.currentTarget.dataset.cityName
-    wx.setStorage({
-      key: 'cityName',
-      data: cityName
-    })
-    wx.navigateBack({})
-  },
+  chooseCity,
 
   searchCity (e) {
     let val = e.detail.value,
@@ -44,6 +39,12 @@ Page({
       searching,
       filteredCities,
       noResult
+    })
+  },
+
+  cancelInput () {
+    this.setData({
+      inputValue: ''
     })
   },
 
@@ -90,5 +91,6 @@ Page({
   },
   onShow: function () {
     setNavigation()
+    wx.stopPullDownRefresh()
   }
 })

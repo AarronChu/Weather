@@ -53,7 +53,7 @@ page{
   display:block;
   position:absolute;
   right:60rpx;
-  bottom:0;
+  bottom:-40rpx;
   font-size: 24rpx;
 }
 .w_today .w_temperature{

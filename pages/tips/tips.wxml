@@ -2,7 +2,7 @@
 <template name="tips">
   <view class="tips_wrapper">
     <view class="tips_img">
-      <image src="../../img/{{index}}.png"></image>
+      <image src="../../img/tipicon{{index}}.png"></image>
     </view>
     <view class="tips_content">
       <text class="tips_title">{{tipt}} {{zs}}</text>

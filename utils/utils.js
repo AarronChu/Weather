@@ -7,13 +7,17 @@ function singleArray (arr) {
     let temp = {},
         res = [],
         len = arr.length
-    for(let i = 0; i < len; i++){
-        if(!temp[arr[i]]){
-            temp[arr[i]] = true
-            res.push(arr[i])
+    if(len <= 1){
+        return arr
+    } else {
+        for(let i = 0; i < len; i++){
+            if(!temp[arr[i]]){
+                temp[arr[i]] = true
+                res.push(arr[i])
+            }
         }
+        return res
     }
-    return res
 }
 
 function filterArray (text, arr) {
@@ -23,4 +27,4 @@ function filterArray (text, arr) {
       }
     })
     return filtered
-  }
+}

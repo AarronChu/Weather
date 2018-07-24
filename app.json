@@ -2,10 +2,7 @@
   "pages": [
     "pages/home/home",
     "pages/search/search",
-    
     "pages/saved-cities/saved-cities",
-    
-    
     "pages/setting/setting"
   ],
   "window": {
@@ -13,6 +10,6 @@
     "navigationBarTextStyle": "#fff",
     "navigationBarTitleText": "fine Weather",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   }
 }

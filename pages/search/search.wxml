@@ -2,9 +2,9 @@
   <view class="search_area">
     <view class="search_inp">
       <icon type="search" size="20"></icon>
-      <input placeholder="请输入你要搜索的城市" bindinput="searchCity"></input>
+      <input placeholder="请输入你要搜索的城市" bindinput="searchCity" value="{{inputValue}}"></input>
     </view>
-    <text>清空</text>
+    <view class="cancel_inp" catchtap="cancelInput">清空</view>
   </view>
 
   <view class="search_result" wx:if="{{searching}}">

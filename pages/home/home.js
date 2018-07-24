@@ -178,7 +178,6 @@ Page({
     wx.getStorage({
       key: 'cityName',
       success: res => {
-        console.log(res)
         this.searchCityWeather(res.data)
       },
       fail: () => {
@@ -319,6 +318,7 @@ Page({
   },
   onShow () {
     this.init()
+    wx.stopPullDownRefresh()
   }
 })
 
