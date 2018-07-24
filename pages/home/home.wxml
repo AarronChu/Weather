@@ -33,6 +33,7 @@
       <template is="tips" data="{{...item, index}}"></template>
     </block>
   </view>
+  <view class="page_end">数据来源，百度地图开放平台</view>
   <view class="navigation_icons">
     <view class="navi_menu" catchlongpress="stopBubble" catchtap="showNaviIcons" catchtouchmove="naviIconMove" animation="{{naviAnimation[0]}}" style="left:{{naviIconLeft}}px; top:{{naviIconTop}}px;">
       <image src="../../img/menu.png" />

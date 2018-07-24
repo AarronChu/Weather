@@ -173,6 +173,5 @@ Page({
 
   onShow: function () {
     this.init()
-    wx.stopPullDownRefresh()
   }
 })

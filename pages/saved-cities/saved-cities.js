@@ -64,7 +64,6 @@ Page({
         this.setData({
           savedWeather
         })
-        console.log(this.data.savedWeather)
       },
       fail: err => {
         console.log(err)
@@ -73,7 +72,6 @@ Page({
   },
 
   onShow: function () {
-    wx.stopPullDownRefresh()
     this.getWeatherData()
     setNavigation()
     wx.getStorage({

@@ -91,6 +91,5 @@ Page({
   },
   onShow: function () {
     setNavigation()
-    wx.stopPullDownRefresh()
   }
 })

@@ -94,6 +94,14 @@ page{
   background-color:rgba(255,255,255,0.3);
 }
 
+.page_end{
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
 .navigation_icons{
   z-index:100;
 }

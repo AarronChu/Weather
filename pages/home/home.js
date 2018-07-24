@@ -175,6 +175,13 @@ Page({
   },
 
   init () {
+    this.getCityNameStorage()
+    this.setUpdateTime()
+    this.setSearchArea()
+    this.getSavedFile()
+  },
+
+  getCityNameStorage () {
     wx.getStorage({
       key: 'cityName',
       success: res => {
@@ -184,9 +191,6 @@ Page({
         this.getWeatherData()
       }
     })
-    this.setUpdateTime()
-    this.setSearchArea ()
-    this.getSavedFile ()
   },
 
   isHoliday () {
@@ -318,6 +322,10 @@ Page({
   },
   onShow () {
     this.init()
+  },
+  onPullDownRefresh () {
+    this.getCityNameStorage()
+    this.setUpdateTime()
     wx.stopPullDownRefresh()
   }
 })
