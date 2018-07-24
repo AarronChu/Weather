@@ -1,4 +1,6 @@
 # Weather
-wx miniapp weather with baidu api
+wx miniapp weather forecast
+use baidu api
 
-![image](https://github.com/AarronChu/Weather/blob/master/qrcode.png)
+
+![qrcode](https://github.com/AarronChu/Weather/blob/master/qrcode.png)
